@@ -11,6 +11,8 @@ use Laravel\Horizon\MasterSupervisor;
 
 class RedisMasterSupervisorRepository implements MasterSupervisorRepository
 {
+    use UsesClusterAwarePipeline;
+
     /**
      * The Redis connection instance.
      *
@@ -70,7 +72,7 @@ class RedisMasterSupervisorRepository implements MasterSupervisorRepository
      */
     public function get(array $names)
     {
-        $records = $this->connection()->pipeline(function ($pipe) use ($names) {
+        $records = $this->pipeline(function ($pipe) use ($names) {
             foreach ($names as $name) {
                 $pipe->hmget('master:'.$name, ['name', 'pid', 'status', 'supervisors', 'environment']);
             }
@@ -78,6 +80,10 @@ class RedisMasterSupervisorRepository implements MasterSupervisorRepository
 
         return collect($records)
             ->map(function ($record) {
+                if (! is_array($record)) {
+                    return null;
+                }
+
                 $record = array_values($record);
 
                 return ! $record[0] ? null : (object) [
@@ -102,7 +108,7 @@ class RedisMasterSupervisorRepository implements MasterSupervisorRepository
     {
         $supervisors = $master->supervisors->map->name->all();
 
-        $this->connection()->pipeline(function ($pipe) use ($master, $supervisors) {
+        $this->pipeline(function ($pipe) use ($master, $supervisors) {
             $pipe->hmset(
                 'master:'.$master->name, [
                     'name' => $master->name,

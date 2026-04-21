@@ -1,6 +1,71 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/horizon/compare/v5.41.0...5.x)
+## [Unreleased](https://github.com/laravel/horizon/compare/v5.46.0...5.x)
+
+## [v5.46.0](https://github.com/laravel/horizon/compare/v5.45.6...v5.46.0) - 2026-04-20
+
+* Bump follow-redirects from 1.15.11 to 1.16.0 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/horizon/pull/1761
+* [5.x] Add first-class Redis Cluster support by [@timmylindh](https://github.com/timmylindh) in https://github.com/laravel/horizon/pull/1760
+
+## [v5.45.6](https://github.com/laravel/horizon/compare/v5.45.5...v5.45.6) - 2026-04-14
+
+* Bump axios from 1.8.2 to 1.15.0 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/horizon/pull/1758
+* [5.x] Pass `$later` in `RedisQueue@later()` by [@cosmastech](https://github.com/cosmastech) in https://github.com/laravel/horizon/pull/1759
+
+## [v5.45.5](https://github.com/laravel/horizon/compare/v5.45.4...v5.45.5) - 2026-04-01
+
+* Bump picomatch from 2.3.1 to 2.3.2 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/horizon/pull/1748
+* Add `.npmrc` file by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/horizon/pull/1753
+
+## [v5.45.4](https://github.com/laravel/horizon/compare/v5.45.3...v5.45.4) - 2026-03-18
+
+* Remove redundant "When to Apply" section from skill body by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/horizon/pull/1729
+
+## [v5.45.3](https://github.com/laravel/horizon/compare/v5.45.2...v5.45.3) - 2026-03-11
+
+* Refine Horizon skill description by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/horizon/pull/1727
+* Update configure-horizon skill examples and command references by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/horizon/pull/1725
+
+## [v5.45.2](https://github.com/laravel/horizon/compare/v5.45.1...v5.45.2) - 2026-03-10
+
+**Full Changelog**: https://github.com/laravel/horizon/compare/v5.45.1...v5.45.2
+
+## [v5.45.1](https://github.com/laravel/horizon/compare/v5.45.0...v5.45.1) - 2026-03-06
+
+* [5.x] Fix runaway memory usage with `horizon:listen` by [@cosmastech](https://github.com/cosmastech) in https://github.com/laravel/horizon/pull/1716
+* Bump rollup from 4.22.4 to 4.59.0 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/horizon/pull/1717
+* Reduce risks of `localStorage` collision by [@meduzen](https://github.com/meduzen) in https://github.com/laravel/horizon/pull/1719
+* return exit code from terminate command by [@webard](https://github.com/webard) in https://github.com/laravel/horizon/pull/1718
+* Bump immutable from 4.3.5 to 4.3.8 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/horizon/pull/1722
+* Show delayed badge for jobs pending retry backoff by [@SanderMuller](https://github.com/SanderMuller) in https://github.com/laravel/horizon/pull/1721
+* Add configure-horizon Boost skill by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/horizon/pull/1723
+
+## [v5.45.0](https://github.com/laravel/horizon/compare/v5.44.0...v5.45.0) - 2026-02-21
+
+* [5.x] Fail fast when Redis is not installed by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1705
+* [5.x] Supports restricting private tunnel requests for `local` environment by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/horizon/pull/1691
+* [5.x] Improve digits readability by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1706
+* [5.x] Mark `horizon:publish` command as deprecated by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1708
+* Fix wildcard pattern matching in file watcher by [@markieo1](https://github.com/markieo1) in https://github.com/laravel/horizon/pull/1712
+* [5.x] Add support for batch searching by [@JoeyMckenzie](https://github.com/JoeyMckenzie) in https://github.com/laravel/horizon/pull/1714
+
+## [v5.44.0](https://github.com/laravel/horizon/compare/v5.43.0...v5.44.0) - 2026-02-10
+
+* [5.x] Add Node.js executable validation before starting file watcher by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1699
+* [5.x] Supports Laravel 13 by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/horizon/pull/1700
+* [5.x] Fix incorrect `@return` tag in Supervisor property docblock by [@eranishojha](https://github.com/eranishojha) in https://github.com/laravel/horizon/pull/1701
+* [5.x] Guard `RedisStore::scan()` results against boolean failures by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1703
+
+## [v5.43.0](https://github.com/laravel/horizon/compare/v5.42.0...v5.43.0) - 2026-01-15
+
+* Add `horizon:listen` command by [@mathiasgrimm](https://github.com/mathiasgrimm) in https://github.com/laravel/horizon/pull/1689
+
+## [v5.42.0](https://github.com/laravel/horizon/compare/v5.41.0...v5.42.0) - 2026-01-06
+
+* Fix race condition that causes jobs to stay in 'pending' state by [@Jeroenwv](https://github.com/Jeroenwv) in https://github.com/laravel/horizon/pull/1682
+* Handle non-array Redis HMGET responses during startup by [@thecaliskan](https://github.com/thecaliskan) in https://github.com/laravel/horizon/pull/1684
+* [5.x] Fix `calculateTimeToClear` return type by [@amirhshokri](https://github.com/amirhshokri) in https://github.com/laravel/horizon/pull/1685
+* Update .gitattributes to ignore more files by [@devfrey](https://github.com/devfrey) in https://github.com/laravel/horizon/pull/1688
 
 ## [v5.41.0](https://github.com/laravel/horizon/compare/v5.40.2...v5.41.0) - 2025-12-14
 

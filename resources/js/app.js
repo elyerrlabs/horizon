@@ -10,6 +10,8 @@ import SchemeToggler from "./components/SchemeToggler.vue";
 import Poll from "./components/Poll.vue";
 import App from "./App.vue";
 
+const LOCALSTORAGE_AUTOLOAD_KEY = 'horizonAutoLoadsNewEntries';
+
 let token = document.head.querySelector("meta[name='csrf-token']");
 
 axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
@@ -18,7 +20,20 @@ if (token) {
     axios.defaults.headers.common["X-CSRF-TOKEN"] = token.content;
 }
 
-const app = createApp(App);
+const app = createApp({
+    data() {
+        return {
+            alert: {
+                type: null,
+                autoClose: 0,
+                message: '',
+                confirmationProceed: null,
+                confirmationCancel: null,
+            },
+            autoLoadsNewEntries: localStorage[LOCALSTORAGE_AUTOLOAD_KEY] === '1',
+        };
+    },
+});
 
 app.config.globalProperties.$http = axios.create();
 app.config.globalProperties.$meta = window.$meta;
