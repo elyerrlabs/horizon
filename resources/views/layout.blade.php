@@ -16,6 +16,7 @@
         $meta = [
             'app_name' => config('horizon.name'),
             'isDownForMaintenance' => $isDownForMaintenance,
+            'dashboard' => Route::has('user.dashboard') ? route('user.dashboard') : '/',
         ];
     @endphp
 

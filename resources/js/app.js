@@ -20,20 +20,7 @@ if (token) {
     axios.defaults.headers.common["X-CSRF-TOKEN"] = token.content;
 }
 
-const app = createApp({
-    data() {
-        return {
-            alert: {
-                type: null,
-                autoClose: 0,
-                message: '',
-                confirmationProceed: null,
-                confirmationCancel: null,
-            },
-            autoLoadsNewEntries: localStorage[LOCALSTORAGE_AUTOLOAD_KEY] === '1',
-        };
-    },
-});
+const app = createApp(App);
 
 app.config.globalProperties.$http = axios.create();
 app.config.globalProperties.$meta = window.$meta;
