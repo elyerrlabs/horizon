@@ -17,6 +17,12 @@ return [
 
     'name' => env('HORIZON_NAME'),
 
+    /**
+     * Route name used by the "Home" button in Horizon.
+     * Allows quick navigation back to the application's main dashboard.
+     */
+    'homepage' => 'user.dashboard',
+
     /*
     |--------------------------------------------------------------------------
     | Horizon Domain
@@ -69,7 +75,7 @@ return [
 
     'prefix' => env(
         'HORIZON_PREFIX',
-        Str::slug(env('APP_NAME', 'laravel'), '_').'_horizon:'
+        Str::slug(env('APP_NAME', 'laravel'), '_') . '_horizon:'
     ),
 
     /*

@@ -14,12 +14,34 @@ Horizon provides a beautiful dashboard and code-driven configuration for your La
 All of your worker configuration is stored in a single, simple configuration file, allowing your configuration to stay in source control where your entire team can collaborate.
 
 <p align="center">
-<img src="https://laravel.com/img/docs/horizon-example.png">
+<img src="dist/example.png">
 </p>
 
 ## Official Documentation
 
 Documentation for Horizon can be found on the [Laravel website](https://laravel.com/docs/horizon).
+
+---
+
+### Homepage Route
+
+You can configure a custom application homepage route through the Horizon configuration file.
+
+This route is used by the **Home** button displayed in the Horizon interface, allowing users to quickly return to the main application dashboard.
+
+```php
+'homepage' => 'home',
+```
+
+The value must be the name of a registered Laravel route.
+
+Example:
+
+```php
+'homepage' => 'dashboard',
+```
+
+If your application uses a custom dashboard or landing page, simply set the corresponding route name in the configuration.
 
 ---
 
@@ -31,10 +53,10 @@ Modern CSP configurations disallow inline scripts/styles unless they include a v
 
 Now the Horizon UI so it works correctly under:
 
--   `script-src 'self' 'nonce-...'`
--   strict `style-src` rules
--   browsers where `unsafe-inline` and `unsafe-eval` are forbidden
--   enterprise-grade security environments
+- `script-src 'self' 'nonce-...'`
+- strict `style-src` rules
+- browsers where `unsafe-inline` and `unsafe-eval` are forbidden
+- enterprise-grade security environments
 
 ---
 
@@ -78,10 +100,10 @@ https://github.com/elyerr/oauth2-passport-server/blob/main/app/Http/Middleware/S
 
 It handles:
 
-- generating the nonce  
-- sharing the nonce globally  
-- applying CSP headers  
-- providing Horizon-specific CSP rules  
+- generating the nonce
+- sharing the nonce globally
+- applying CSP headers
+- providing Horizon-specific CSP rules
 
 ---
 
@@ -97,7 +119,9 @@ protected $middlewareGroups = [
     ],
 ];
 ```
+
 #### Laravel 11+
+
 ```php
 $middleware->web(
     append: [
@@ -106,7 +130,9 @@ $middleware->web(
     ]
 );
 ```
---- 
+
+---
+
 ## Contributing
 
 Thank you for considering contributing to Horizon! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
